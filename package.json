@@ -1,0 +1,26 @@
+{
+  "name": "cbf-community-website-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "13.8.0",
+    "npm": "6.13.6"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bezawork/cbf-community-website-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bezawork/cbf-community-website-node/issues"
+  },
+  "homepage": "https://github.com/bezawork/cbf-community-website-node#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
