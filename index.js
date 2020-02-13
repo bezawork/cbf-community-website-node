@@ -4,16 +4,20 @@ const app = express();
 
 const MEDIUM_URL = "https://medium.com/@codingblackfemales/latest?format=json";
 
-app.get("/blog", (req, res) => {
-  https.get(MEDIUM_URL, (err, apiRes, body) => {
-    if (!err && apiRes.statusCode === 200) {
-      let i = body.indexOf("{");
-      const data = body.substr(i);
-      res.send(data);
-    } else {
-      res.sendStatus(500).json(err);
-    }
-  });
+app.get("/blog", (req, resp) => {
+  https
+    .get(MEDIUM_URL, resp => {
+      let data = "";
+      resp.on("data", chunk => {
+        data += chunk;
+      });
+      resp.on("end", () => {
+        console.log(data);
+      });
+    })
+    .on("error", err => {
+      console.log("Error: " + err.message);
+    });
 });
 
 const PORT = process.env.PORT || 4000;
