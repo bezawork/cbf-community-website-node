@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/bezawork/cbf-community-website-node#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "rss-to-json": "^1.0.5"
   }
 }

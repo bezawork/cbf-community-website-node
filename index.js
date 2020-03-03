@@ -1,8 +1,13 @@
 const express = require("express");
 const https = require("https");
 const app = express();
-
-const MEDIUM_URL = "https://medium.com/@codingblackfemales/latest?format=json";
+const Feed = require("rss-to-json");
+const MEDIUM_URL = Feed.load(
+  "https://medium.com/feed/codingblackfemales",
+  function(err, rss) {
+    console.log(rss);
+  }
+);
 
 app.get("/blog", (req, resp) => {
   https
